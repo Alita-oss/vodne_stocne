@@ -1,6 +1,6 @@
 import status from 'http-status';
 import { ErrorTypes } from '../../types/error';
-import { H3Event } from 'h3';
+import type { H3Event } from 'h3';
 
 export const handleCatchError = (message: string, err: unknown) => {
     const errorString = String(err).replace('Error: ', '');

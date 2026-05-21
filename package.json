@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint ."
   },
   "dependencies": {
     "http-status": "^2.1.0",
@@ -16,6 +17,8 @@
     "vue-router": "^5.0.7"
   },
   "devDependencies": {
+    "@nuxt/eslint": "^1.15.2",
+    "@types/node": "^25.9.1",
     "sass": "^1.99.0"
   }
 }

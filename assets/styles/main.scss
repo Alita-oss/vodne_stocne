@@ -1,4 +1,6 @@
 @use 'reset';
+@use './functions.scss';
+@use './typography.scss';
 
 :root {
     --color-warning: #ed4337;
