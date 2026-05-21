@@ -1,19 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { fileURLToPath } from 'url';
 export default defineNuxtConfig({
-    css: ['@/assets/styles/main.scss'],
+    modules: ['@nuxt/eslint'],
+    //css: ['~/assets/styles/main.scss'],
 
-    vite: {
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    additionalData: `
-                        @use "@/assets/styles/functions.scss";
-                        @use "@/assets/styles/typography.scss";
-                    `,
-                },
-            },
-        },
-    },
+    css: [fileURLToPath(new URL('./assets/styles/main.scss', import.meta.url))],
 
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
