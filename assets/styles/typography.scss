@@ -1,0 +1,120 @@
+@use 'sass:map';
+
+$font-sizes: (
+    xs: 0.75rem,
+    sm: 0.875rem,
+    md: 1rem,
+    lg: 1.125rem,
+    xl: 1.25rem,
+    xxl: 1.5rem,
+    h1: 5rem,
+    h2: 4rem,
+    h3: 3rem,
+    h4: 2.5rem,
+    h5: 2rem,
+    h6: 1.5rem,
+);
+
+$line-heights: (
+    xs: 1.25rem,
+    sm: 1.5rem,
+    md: 1.75rem,
+    lg: 2rem,
+    xl: 2.25rem,
+    xxl: 2.5rem,
+    h1: 5rem,
+    h2: 4rem,
+    h3: 3rem,
+    h4: 2.5rem,
+    h5: 2rem,
+    h6: 1.5rem,
+);
+
+$font-weights: (
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+);
+
+$letter-spacings: (
+    tight: -0.5px,
+    normal: 0,
+    wide: 0.5px,
+);
+
+$font-colors: (
+    primary: #212121,
+    white: #fff,
+);
+
+$scale: (
+    body: (xs: (font-size: map.get($font-sizes, 'sm'),
+            line-height: map.get($line-heights, 'sm'),
+            font-weight: map.get($font-weights, 'regular'),
+            letter-spacing: map.get($letter-spacings, 'wide'),
+        ),
+        s: (font-size: map.get($font-sizes, 'md'),
+            line-height: map.get($line-heights, 'md'),
+            font-weight: map.get($font-weights, 'regular'),
+            letter-spacing: map.get($letter-spacings, 'wide'),
+        ),
+        m: (font-size: map.get($font-sizes, 'lg'),
+            line-height: map.get($line-heights, 'lg'),
+            font-weight: map.get($font-weights, 'regular'),
+            letter-spacing: map.get($letter-spacings, 'wide'),
+        ),
+        l: (font-size: map.get($font-sizes, 'xl'),
+            line-height: map.get($line-heights, 'xl'),
+            font-weight: map.get($font-weights, 'regular'),
+            letter-spacing: map.get($letter-spacings, 'wide'),
+        ),
+        xl: (font-size: map.get($font-sizes, 'xxl'),
+            line-height: map.get($line-heights, 'xxl'),
+            font-weight: map.get($font-weights, 'regular'),
+            letter-spacing: map.get($letter-spacings, 'wide'),
+        ),
+    ),
+    headlines: (h1: (font-size: map.get($font-sizes, 'h1'),
+            line-height: map.get($line-heights, 'h1'),
+            font-weight: map.get($font-weights, 'bold'),
+            letter-spacing: map.get($letter-spacings, 'wide'),
+        ),
+        h2: (font-size: map.get($font-sizes, 'h2'),
+            line-height: map.get($line-heights, 'h2'),
+            font-weight: map.get($font-weights, 'bold'),
+            letter-spacing: map.get($letter-spacings, 'wide'),
+        ),
+        h3: (font-size: map.get($font-sizes, 'h3'),
+            line-height: map.get($line-heights, 'h3'),
+            font-weight: map.get($font-weights, 'bold'),
+            letter-spacing: map.get($letter-spacings, 'wide'),
+        ),
+        h4: (font-size: map.get($font-sizes, 'h4'),
+            line-height: map.get($line-heights, 'h4'),
+            font-weight: map.get($font-weights, 'bold'),
+            letter-spacing: map.get($letter-spacings, 'wide'),
+        ),
+        h5: (font-size: map.get($font-sizes, 'h5'),
+            line-height: map.get($line-heights, 'h5'),
+            font-weight: map.get($font-weights, 'bold'),
+            letter-spacing: map.get($letter-spacings, 'wide'),
+        ),
+        h6: (font-size: map.get($font-sizes, 'h6'),
+            line-height: map.get($line-heights, 'h6'),
+            font-weight: map.get($font-weights, 'bold'),
+            letter-spacing: map.get($letter-spacings, 'wide'),
+        ),
+    )
+);
+
+@mixin font($font, $variant) {
+    $sizes: map.get($scale, $font);
+    $size: map.get($sizes, $variant);
+
+    font-size: map.get($size, font-size);
+    line-height: map.get($size, line-height);
+    font-weight: map.get($size, font-weight);
+    letter-spacing: map.get($size, letter-spacing);
+}

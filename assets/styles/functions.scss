@@ -1,0 +1,70 @@
+@use 'sass:map';
+@use './layout.scss';
+
+$devices-sizes: (
+    mobile: xs,
+    largeMobile: s,
+    tablet: m,
+    desktop: l,
+    large: xl,
+    extraLarge: xxl,
+);
+
+$screen-breakpoints: (
+    xs: layout.$breakpoints-xs,
+    s: layout.$breakpoints-sm,
+    m: layout.$breakpoints-md,
+    l: layout.$breakpoints-lg,
+    xl: layout.$breakpoints-xl,
+    xxl: layout.$breakpoints-xxl,
+);
+
+@mixin device($device) {
+    $size: map.get($devices-sizes, $device);
+    $breakpoint: get-breakpoint($size);
+
+    @include media-queries($breakpoint) {
+        @content;
+    }
+}
+
+@function get-breakpoint-size($size) {
+    @return map.get($screen-breakpoints, $size);
+}
+
+@function get-breakpoint($size) {
+    @return map.get($screen-breakpoints, $size);
+}
+
+@function get-device($device, $min-max: min) {
+    $size: map.get($devices-sizes, $device);
+    $breakpoint: get-breakpoint($size);
+
+    @if $min-max ==max {
+        @return ($breakpoint - 1) * 1px;
+    }
+
+    @return $breakpoint * 1px;
+}
+
+@mixin media-queries($breakpoint, $min-or-max: min) {
+    @if ($breakpoint ==null or $breakpoint ==0) {
+        @if ($min-or-max ==max) {
+            @warn '[#{&}] #{$breakpoint} #{$min-or-max} That will not do anything';
+        }
+
+        @content;
+    }
+
+    @else if ($min-or-max == max) {
+        @media screen and (max-width: #{ $breakpoint - 1px }) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (min-width: $breakpoint) {
+            @content;
+        }
+    }
+}
