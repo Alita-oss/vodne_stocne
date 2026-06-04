@@ -12,5 +12,5 @@ export type Resident = {
     hasWater?: boolean;
     hasSewage?: boolean;
     waterMeterNumber?: number;
-    peopleInHousehold: number;
+    peopleInHousehold?: number;
 };

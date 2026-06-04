@@ -41,7 +41,7 @@ const residentSchema = new Schema<ResidentType>({
     },
     peopleInHousehold: {
         type: Number,
-        required: true,
+        required: false,
     },
 });
 

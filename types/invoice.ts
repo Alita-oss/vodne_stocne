@@ -4,11 +4,21 @@ import { Types } from 'mongoose';
 export type Invoice = {
     _id: string;
     invoiceNumber: number;
-    totalAmount: number;
-    roundedTotalAmount: number;
+    water: {
+        baseAmount: number;
+        vatAmount: number;
+        totalAmount: number;
+        roundedTotalAmount: number;
+    };
+    sewage: {
+        baseAmount: number;
+        vatAmount: number;
+        totalAmount: number;
+        roundedTotalAmount: number;
+    };
     isPaid: boolean;
     paidAt?: Date;
-    VsWater: number;
-    VsSewage: number;
+    vsWater?: number;
+    vsSewage?: number;
     consumption: Types.ObjectId | Consumption;
 };
