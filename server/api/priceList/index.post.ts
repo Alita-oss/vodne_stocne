@@ -1,6 +1,6 @@
 import { PriceList } from '../../models/priceList';
 import status from 'http-status';
-import { ErrorPrefix, ErrorTypes } from '../../types/error';
+import { ErrorPrefix, ErrorTypes } from '../../../types/error';
 import { checkParam, handleCatchError } from '../../utils/api';
 
 export default defineEventHandler(async (event) => {

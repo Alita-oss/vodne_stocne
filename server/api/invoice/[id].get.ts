@@ -1,6 +1,6 @@
 import { Invoice } from '../../models/invoice';
 import status from 'http-status';
-import { ErrorPrefix, ErrorTypes } from '../../types/error';
+import { ErrorPrefix, ErrorTypes } from '../../../types/error';
 import { checkParam, handleCatchError } from '../../utils/api';
 import { Types } from 'mongoose';
 

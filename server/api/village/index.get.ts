@@ -1,6 +1,6 @@
 import { Village } from '../../models/village';
 import status from 'http-status';
-import { ErrorPrefix } from '../../types/error';
+import { ErrorPrefix } from '../../../types/error';
 import { handleCatchError } from '../../utils/api';
 
 export default defineEventHandler(async (event) => {

@@ -1,6 +1,6 @@
 import { Invoice } from '../../models/invoice';
 import status from 'http-status';
-import { ErrorPrefix } from '../../types/error';
+import { ErrorPrefix } from '../../../types/error';
 import { checkParam, handleCatchError } from '../../utils/api';
 
 export default defineEventHandler(async (event) => {
