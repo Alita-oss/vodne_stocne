@@ -6,13 +6,41 @@ const invoiceSchema = new Schema<InvoiceType>({
         type: Number,
         required: true,
     },
-    totalAmount: {
-        type: Number,
-        required: true,
+    water: {
+        baseAmount: {
+            type: Number,
+            required: true,
+        },
+        vatAmount: {
+            type: Number,
+            required: true,
+        },
+        totalAmount: {
+            type: Number,
+            required: true,
+        },
+        roundedTotalAmount: {
+            type: Number,
+            required: true,
+        },
     },
-    roundedTotalAmount: {
-        type: Number,
-        required: true,
+    sewage: {
+        baseAmount: {
+            type: Number,
+            required: true,
+        },
+        vatAmount: {
+            type: Number,
+            required: true,
+        },
+        totalAmount: {
+            type: Number,
+            required: true,
+        },
+        roundedTotalAmount: {
+            type: Number,
+            required: true,
+        },
     },
     isPaid: {
         type: Boolean,
@@ -22,13 +50,13 @@ const invoiceSchema = new Schema<InvoiceType>({
         type: Date,
         required: false,
     },
-    VsWater: {
+    vsWater: {
         type: Number,
-        required: true,
+        required: false,
     },
-    VsSewage: {
+    vsSewage: {
         type: Number,
-        required: true,
+        required: false,
     },
     consumption: {
         type: Types.ObjectId,

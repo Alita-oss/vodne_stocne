@@ -1,4 +1,4 @@
-import { VillageName } from '../types/village';
+import { VillageName } from '../../types/village';
 
 export const VillageCodeMap: Record<VillageName, number> = {
     [VillageName.LIPA]: 1,
